@@ -99,6 +99,8 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ADO\TaskDAL.cs" />
+    <Compile Include="ADO\TaskDTO.cs" />
     <Compile Include="ADO\UserDAL.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\ParentTasksController.cs" />

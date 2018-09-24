@@ -1,4 +1,6 @@
-﻿using ProjectTrackerAPI.Models;
+﻿using ProjectTrackerAPI.ADO;
+using ProjectTrackerAPI.Models;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace ProjectTrackerAPI.ModelServices
@@ -11,5 +13,6 @@ namespace ProjectTrackerAPI.ModelServices
         string CreateTask(TaskVm Task);
         string CreateParentTask(TaskVm parentTask);
         int DeleteTask(int id);
+        List<TaskDTO> GetAllTasks();
     }
 }

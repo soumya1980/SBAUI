@@ -4,6 +4,7 @@ using ProjectTrackerEF.Models;
 using ProjectTrackerEF;
 using ProjectTrackerAPI.Models;
 using ProjectTrackerAPI.ADO;
+using System.Collections.Generic;
 
 namespace ProjectTrackerAPI.ModelServices
 {
@@ -76,6 +77,11 @@ namespace ProjectTrackerAPI.ModelServices
             throw new NotImplementedException();
         }
 
+        public List<TaskDTO> GetAllTasks()
+        {
+            var taskDa = new TaskDAL();
+            return taskDa.GetAllTasks();
+        }
         public int PatchTask(int id, Task task)
         {
             throw new NotImplementedException();

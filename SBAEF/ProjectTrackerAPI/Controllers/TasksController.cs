@@ -114,6 +114,22 @@ namespace ProjectTrackerAPI.Controllers
             }
             return response;
         }
+        [Route("viewtasks")]
+        [HttpGet]
+        public HttpResponseMessage ViewAllTasks()
+        {
+            var response = new HttpResponseMessage();
+            try
+            {
+                var res = taskService.GetAllTasks();
+                response = Request.CreateResponse(HttpStatusCode.OK, res);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, ex.InnerException);
+            }
+            return response;
+        }
         [Route("newtaskasparent")]
         [HttpPost]
         public HttpResponseMessage PostTaskAsParent(TaskVm parentTaskVm)
