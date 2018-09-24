@@ -2,6 +2,8 @@ import { Component } from "@angular/core";
 import { UserService } from "src/app/Users/user.service";
 import { OnInit } from "@angular/core/src/metadata/lifecycle_hooks";
 import { User } from "src/app/Users/User";
+import { ProjectService } from "src/app/Projects/project.service";
+import { Project, UserProject } from "src/app/Projects/project";
 
 @Component(
     {
@@ -11,8 +13,18 @@ import { User } from "src/app/Users/User";
 export class ProjectComponent implements OnInit {
     listUsers: User[] = [];
     errorMessage: string;
-    constructor(private userService: UserService) {
+    constructor(private userService: UserService,private projectService:ProjectService) {
         console.log('constructor is fired from Project Component');
+    }
+    createProject(): void {
+        console.log('Project Create Button clicked');
+        let projectData=new Project(1006,new UserProject("Hospital Management","09/20/2018","09/21/2019",1));
+        this.projectService.createProject(projectData).subscribe(
+            res => {
+            console.log('Project Created' + JSON.stringify(res));
+        },
+        error=>this.errorMessage=<any>error
+    );
     }
     searchUsers(): void {
         this.userService.getUsers().subscribe(
