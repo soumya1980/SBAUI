@@ -24,3 +24,28 @@ export class CreateTask{
         this.task=task;
     }
 }
+export class ViewTask{
+    TaskID:number;
+    TaskName:string;
+    StartDate:Date;
+    EndDate:Date;
+    Priority:number;
+    Status:string;
+    ParentTaskID:number;
+    ParentTask:string;
+    ProjectID:number;
+    ProjectDesc:string
+    constructor(tid:number,tname:string,stdt :Date,enddt:Date,priority:number,status:string,
+        ptid:number,ptask:string,pid :number,pdesc:string){
+            this.TaskID=tid;
+            this.TaskName=tname;
+            this.StartDate=stdt;
+            this.EndDate=enddt;
+            this.Priority=priority;
+            this.Status=status;
+            this.ParentTaskID=ptid;
+            this.ParentTask=ptask;
+            this.ProjectID=pid;
+            this.ProjectDesc=pdesc;
+    }
+}

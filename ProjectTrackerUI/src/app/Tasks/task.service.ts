@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { CreateTask } from "src/app/Tasks/task";
+import { CreateTask, ViewTask } from "src/app/Tasks/task";
 import { Observable, throwError } from "rxjs";
 import { tap, catchError } from "rxjs/Operators";
 import { HttpErrorResponse } from "@angular/common/http";
@@ -10,6 +10,7 @@ import { HttpErrorResponse } from "@angular/common/http";
 })
 export class TaskService{
     private createTaskUrl="http://localhost/ProjectTrackerAPI/api/tasks/newtask";
+    private viewAllTaskUrl="http://localhost/ProjectTrackerAPI/api/tasks/viewtasks";
     private createTaskAsParentUrl="http://localhost/ProjectTrackerAPI/api/tasks/newtaskasparent";
     constructor(private http:HttpClient){}
     createTask(taskData:CreateTask):Observable<string>{
@@ -27,6 +28,14 @@ export class TaskService{
         }),
         catchError(this.handleError)
     );
+    }
+    viewTasks():Observable<ViewTask[]>{
+        return this.http.get<ViewTask[]>(this.viewAllTaskUrl).pipe(
+            tap(data=>{
+                console.log('All Tasks :'+JSON.stringify(data));
+            }),
+            catchError(this.handleError)
+        );
     }
     private handleError(err:HttpErrorResponse) {
         let errorMessage='';
