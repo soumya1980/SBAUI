@@ -18,4 +18,14 @@ export class TaskComponent{
         error=>this.errorMessage=<any>error
     );
     }
+    createTaskAsParent(): void {
+        console.log('Parent Task Create Button clicked');
+        let taskData=new CreateTask(1,0,1,new Task("Form The Team","09/25/2018","11/26/2018",1,"Open"));
+        this.taskService.createTaskAsParent(taskData).subscribe(
+            res => {
+            console.log('Parent Task Created' + JSON.stringify(res));
+        },
+        error=>this.errorMessage=<any>error
+    );
+    }
 }
