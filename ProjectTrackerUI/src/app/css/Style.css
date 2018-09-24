@@ -1,0 +1,48 @@
+.the-legend {
+    border-style: none;
+border-width: 0;
+font-weight: bold;
+width: auto;
+padding: 0 10px;
+
+}
+.right-float{
+float:right;
+}
+.the-fieldset {
+border: 2px solid #ddd;
+padding: 10px;
+}
+.clr{
+clear: both;
+margin-top: 10px;
+}
+.ProductName{
+color:#337ab7;
+}
+.chk-width{
+width:18%;
+}
+/* enable absolute positioning */
+.inner-addon {
+position: relative;
+}
+
+/* style glyph */
+.inner-addon .glyphicon {
+position: absolute;
+padding: 10px;
+pointer-events: none;
+}
+
+/* align glyph */
+.left-addon .glyphicon  { left:  0px;}
+.right-addon .glyphicon { right: 0px;}
+
+/* add padding  */
+.left-addon input  { padding-left:  30px; }
+.right-addon input { padding-right: 30px; }
+.btn-width{margin-left: 15px;}
+.fade{
+    opacity: 1 !important;
+}

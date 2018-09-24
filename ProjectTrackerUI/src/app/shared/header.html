@@ -1,0 +1,33 @@
+<div class="panel-heading">
+    <div class="form-group">
+        <div class="col-sm-6">
+            <label class="col-form-label">Project Manager</label>
+        </div>
+    </div>
+</div>
+<div class="panel-body">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs">
+                        <li class=""><a [routerLink]="['/projects']"><b>Add Project</b></a>
+                        </li>
+                        <li class=""><a [routerLink]="['/tasks']"><b>Add Task</b></a>
+                        </li>
+                        <li class=""><a [routerLink]="['/users']"><b>Add User</b></a>
+                        </li>
+                        <li class=""><a [routerLink]="['/taskmanager']"><b>View Task</b></a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <!--Main content START Here-->
+                        <router-outlet></router-outlet>
+                        <!--Main content END Here-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
