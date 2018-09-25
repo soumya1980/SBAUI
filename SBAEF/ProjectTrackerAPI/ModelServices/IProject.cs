@@ -8,7 +8,7 @@ namespace ProjectTrackerAPI.ModelServices
 {
     public interface IProject
     {
-        IQueryable<Project> AllProjects();
+        List<Project> AllProjects();
         Project GetProject(int id);
         int PatchProject(int id, Project project);
         string CreateProject(UserProject uservmproject);

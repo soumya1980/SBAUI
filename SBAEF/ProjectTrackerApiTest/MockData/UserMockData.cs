@@ -1,10 +1,6 @@
 ﻿using ProjectTrackerEF.Models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net.Mime;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProjectTrackerApiTest.MockData
 {
@@ -35,6 +31,37 @@ namespace ProjectTrackerApiTest.MockData
             });
             
             return lstResponse;
+        }
+        public static User GetUserResponse()
+        {
+            return new User
+            {
+                Employee_ID = 100,
+                FirstName = "Soumya",
+                LastName = "Moharana",
+                IsMgr = false,
+                User_ID = 1
+            };
+        }
+        public static User userRequest()
+        {
+            return new User
+            {
+                Employee_ID = 100,
+                FirstName = "Soumya",
+                LastName = "Moharana",
+                IsMgr = false,
+                User_ID = 1
+            };
+        }
+        public static User newUserRequest()
+        {
+            return new User
+            {
+                Employee_ID = 100,
+                FirstName = "Soumya",
+                LastName = "Moharana"
+            };
         }
     }
 }

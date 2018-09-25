@@ -27,20 +27,26 @@ namespace ProjectTrackerAPI.Controllers
         {
             projectService = new ProjectService();
         }
+        public ProjectsController(IProject pService)
+        {
+            projectService = pService;
+        }
         [Route("all")]
         [HttpGet]
-        public IQueryable<Project> GetProjects()
+        public HttpResponseMessage GetProjects()
         {
             log.Debug("START-EXECUTE - Pull All Projects");
+            var response = new HttpResponseMessage();
             try
             {
-                return projectService.AllProjects();
+                var projects = projectService.AllProjects();
+                response = Request.CreateResponse(HttpStatusCode.OK, projects);
             }
             catch (Exception ex)
             {
                 log.ErrorFormat("Fatal Exception happened while pulling data : {0}", ex.InnerException);
             }
-            return null;
+            return response;
         }
 
         // GET: api/Projects/5

@@ -17,9 +17,28 @@ namespace ProjectTrackerAPI.ModelServices
         {
             db = new ProjectTrackerContext();
         }
-        public IQueryable<Project> AllProjects()
+        public List<Project> AllProjects()
         {
-            return db.Projects;
+            try
+            {
+                var lstProject = new List<Project>();
+                foreach (var item in db.Projects)
+                {
+                    lstProject.Add(new Project
+                    {
+                        Project_ID=item.Project_ID,
+                        ProjectDesc=item.ProjectDesc,
+                        Priority=item.Priority,
+                        StartDt=item.StartDt,
+                        EndDt=item.EndDt
+                    });
+                }
+                return lstProject;
+            }
+            catch (Exception ex)
+            {
+                throw ex.InnerException;
+            }
         }
         private string UpdateUser(int employeeid,int projectid)
         {
