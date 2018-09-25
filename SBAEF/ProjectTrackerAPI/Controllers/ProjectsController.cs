@@ -111,7 +111,22 @@ namespace ProjectTrackerAPI.Controllers
             }
             return response;
         }
-
+        [Route("viewprojects")]
+        [HttpGet]
+        public HttpResponseMessage ViewAllProjectsAndStatus()
+        {
+            var response = new HttpResponseMessage();
+            try
+            {
+                var res = projectService.GetAllProjectsAndStatus();
+                response = Request.CreateResponse(HttpStatusCode.OK, res);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, ex.InnerException);
+            }
+            return response;
+        }
         // DELETE: api/Projects/5
         [ResponseType(typeof(Project))]
         public IHttpActionResult DeleteProject(int id)

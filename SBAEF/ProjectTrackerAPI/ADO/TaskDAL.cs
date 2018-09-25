@@ -32,12 +32,12 @@ namespace ProjectTrackerAPI.ADO
                     {
                         taskList.Add(new TaskDTO
                         {
-                            EndDate=(DateTime)rdr["StartDt"],
+                            EndDate=((DateTime)rdr["EndDt"]).ToString("MM/dd/yyyy"),
                             ParentTaskID= rdr["Parent_ID"].ToString() ==string.Empty?0:(Int32)rdr["Parent_ID"],
                             Priority=(Int32)rdr["Priority"],
                             ProjectDesc=(String)rdr["ProjectDesc"],
                             ProjectID=(Int32)rdr["Project_ID"],
-                            StartDate=(DateTime)rdr["EndDt"],
+                            StartDate=((DateTime)rdr["StartDt"]).ToString("MM/dd/yyyy"),
                             Status=(String)rdr["Status"],
                             TaskID=(Int32)rdr["Task_ID"],
                             TaskName=(String)rdr["TaskName"],

@@ -6,6 +6,7 @@ using ProjectTrackerAPI.Models;
 using System.Data.Entity;
 using System.Web.Http.ModelBinding;
 using ProjectTrackerAPI.ADO;
+using System.Collections.Generic;
 
 namespace ProjectTrackerAPI.ModelServices
 {
@@ -46,7 +47,11 @@ namespace ProjectTrackerAPI.ModelServices
         {
             return db.Projects.Find(id);
         }
-
+        public List<ProjectDTO> GetAllProjectsAndStatus()
+        {
+            var projectDa = new ProjectDAL();
+            return projectDa.GetAllProjectsAndStatus();
+        }
         public int PatchProject(int id, Project project)
         {
             throw new NotImplementedException();

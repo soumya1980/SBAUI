@@ -1,5 +1,7 @@
-﻿using ProjectTrackerAPI.Models;
+﻿using ProjectTrackerAPI.ADO;
+using ProjectTrackerAPI.Models;
 using ProjectTrackerEF.Models;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace ProjectTrackerAPI.ModelServices
@@ -11,6 +13,6 @@ namespace ProjectTrackerAPI.ModelServices
         int PatchProject(int id, Project project);
         string CreateProject(UserProject uservmproject);
         int DeleteProject(int id);
-        //int UpdateUser();
+        List<ProjectDTO> GetAllProjectsAndStatus();
     }
 }

@@ -5,17 +5,15 @@ using System.Web;
 
 namespace ProjectTrackerAPI.ADO
 {
-    public class TaskDTO
+    public class ProjectDTO
     {
-        public int TaskID { get; set; }
-        public string TaskName { get; set; }
+        public int ProjectID { get; set; }
+        public string ProjectDesc { get; set; }
         public String StartDate { get; set; }
         public String EndDate { get; set; }
         public int Priority { get; set; }
         public string Status { get; set; }
-        public int? ParentTaskID { get; set; }
-        public string ParentTask { get; set; }
-        public int ProjectID { get; set; }
-        public string ProjectDesc { get; set; }
+        public int TaskNos { get; set; }
+        
     }
 }
