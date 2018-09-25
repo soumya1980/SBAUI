@@ -46,3 +46,9 @@ pointer-events: none;
 .fade{
     opacity: 1 !important;
 }
+.bottom-line{
+    border-top:2px solid #ddd;
+    }
+.bottom-line-dotted{
+    border-top:2px dotted #ddd;
+    }
