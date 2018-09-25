@@ -3,13 +3,10 @@ using NUnit.Framework;
 using ProjectTrackerAPI.Controllers;
 using ProjectTrackerAPI.ModelServices;
 using ProjectTrackerApiTest.MockData;
-using System.Linq;
 using System.Net;
 using System.Net.Http;
-using EFModel = ProjectTrackerEF.Models;
 using System.Web.Http;
 using System.Web.Http.Hosting;
-using ProjectTrackerEF.Models;
 using ProjectTrackerAPI.Models;
 
 namespace ProjectTrackerApiTest

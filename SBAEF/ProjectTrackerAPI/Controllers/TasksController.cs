@@ -25,6 +25,10 @@ namespace ProjectTrackerAPI.Controllers
         {
             taskService = new TaskService();
         }
+        public TasksController(ITask taskSrvc)
+        {
+            taskService = taskSrvc;
+        }
         [Route("tasks")]
         [HttpGet]
         public HttpResponseMessage GetTasks()

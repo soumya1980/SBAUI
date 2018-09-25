@@ -68,8 +68,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MockData\ProjectMockData.cs" />
+    <Compile Include="MockData\TaskMockData.cs" />
     <Compile Include="MockData\UserMockData.cs" />
     <Compile Include="ProjectTest.cs" />
+    <Compile Include="TaskControllerTest.cs" />
     <Compile Include="UserControllerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
