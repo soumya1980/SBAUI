@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpErrorResponse } from "@angular/common/http";
-import { Project } from "src/app/Projects/project";
+import { Project, ProjectAndStatus } from "src/app/Projects/project";
 import { Observable, throwError } from "rxjs";
 import { tap, catchError } from "rxjs/Operators";
 
@@ -9,11 +9,20 @@ import { tap, catchError } from "rxjs/Operators";
 })
 export class ProjectService {
     private createProjectUrl = "http://localhost/ProjectTrackerAPI/api/projects/newproject";
+    private viewProjectAndStatusUrl = "http://localhost/ProjectTrackerAPI/api/projects/viewprojects";
     constructor(private http: HttpClient) { }
     createProject(projectData: Project): Observable<string> {
         return this.http.post<string>(this.createProjectUrl, projectData).pipe(
             tap(res => {
                 console.log(res);
+            }),
+            catchError(this.handleError)
+        );
+    }
+    viewProjectsAndStatus():Observable<ProjectAndStatus[]>{
+        return this.http.get<ProjectAndStatus[]>(this.viewProjectAndStatusUrl).pipe(
+            tap(data=>{
+                console.log('All Projects And Status :'+JSON.stringify(data));
             }),
             catchError(this.handleError)
         );

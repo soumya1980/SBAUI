@@ -18,3 +18,21 @@ export class UserProject{
         this.Priority=priority;
     }
 }
+export class ProjectAndStatus{
+    ProjectID:number;
+    ProjectDesc:string;
+    StartDate:Date;
+    EndDate:Date;
+    Priority:number;
+    Status:string;
+    TaskNos:number;
+    constructor(pid:number,pdesc:string,stdt:Date,enddt:Date,priority:number,status:string,tno:number){
+        this.ProjectID=pid;
+        this.ProjectDesc=pdesc;
+        this.StartDate=stdt;
+        this.EndDate=enddt;
+        this.Priority=priority;
+        this.Status=status;
+        this.TaskNos=tno;
+    }
+}
