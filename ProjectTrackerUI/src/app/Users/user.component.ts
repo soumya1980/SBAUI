@@ -9,12 +9,15 @@ import { CreateUser } from "src/app/Users/createuser";
 })
 export class UserComponent {
     errorMessage:string;
+    firstName:string;
+    lastName:string;
+    employeeId:number;
     constructor(private userService: UserService) {
 
     }
     createUser(): void {
         console.log('User clicked');
-        let userData=new CreateUser("Ashok","Mounth",105);
+        let userData=new CreateUser(this.firstName,this.lastName,this.employeeId);
         this.userService.createUser(userData).subscribe(
             res => {
             console.log('User Created' + JSON.stringify(res));

@@ -8,7 +8,7 @@ import { UserComponent } from './Users/user.component';
 import { ViewTaskComponent } from './TaskManager/viewtask.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NonManagerFilter } from 'src/app/Projects/user.filter';
-
+import{FormsModule} from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,6 +21,7 @@ import { NonManagerFilter } from 'src/app/Projects/user.filter';
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
     RouterModule.forRoot(
       [
         {path : 'projects',component: ProjectComponent },
