@@ -25,9 +25,13 @@ export class TaskComponent{
         console.log('Task Create Button clicked');
         //If the End date is less than today's date then set the status as OPEN
         //Start Date must be >= Today and End Date must be <=Start Date
+        let taskData:CreateTask;
         let status:string;
-        let taskData=new CreateTask(1,1,3004,
-            new Task("GIT Setup","09/25/2018","09/26/2018",3,"Open"));
+        if(!this.showParent){
+        taskData=new CreateTask(this.projectId,this.pTaskId,this.employeeId,
+            new Task(this.taskName,this.stDt,this.endDt,this.priority,"Open"));
+        }
+        
         this.taskService.createTask(taskData).subscribe(
             res => {
             console.log('Task Created' + JSON.stringify(res));
@@ -37,7 +41,8 @@ export class TaskComponent{
     }
     createTaskAsParent(): void {
         console.log('Parent Task Create Button clicked');
-        let taskData=new CreateTask(1,0,1,new Task("Form The Team","09/25/2018","11/26/2018",1,"Open"));
+        let taskData=new CreateTask(this.projectId,0,this.employeeId,
+            new Task(this.taskName,this.stDt,this.endDt,this.priority,"Open"));
         this.taskService.createTaskAsParent(taskData).subscribe(
             res => {
             console.log('Parent Task Created' + JSON.stringify(res));
