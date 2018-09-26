@@ -3,10 +3,16 @@ import { TaskService } from "src/app/Tasks/task.service";
 import { ViewTask } from "src/app/Tasks/task";
 import { OnInit } from "@angular/core/src/metadata/lifecycle_hooks";
 
+
 @Component({
     templateUrl: './viewtask.component.html'
 })
 export class ViewTaskComponent implements OnInit {
+    key:string='StartDate';
+    reverse:boolean=false;
+    sort(key){
+        
+    }
     _searchProjectText: string;
     get searchProjectText():string{
         return this._searchProjectText;
@@ -21,6 +27,10 @@ export class ViewTaskComponent implements OnInit {
     constructor(private taskService: TaskService) {
         console.log('Constructor Trigerred');
         this.listFilteredProjctTask = this.listViewTasks;
+    }
+    PerformFilterByDate(key){
+        this.key=key;
+        this.reverse = !this.reverse;
     }
     PerformFilter(): ViewTask[] {
         let filterBy = this.searchProjectText.toLocaleLowerCase();

@@ -9,6 +9,7 @@ import { ViewTaskComponent } from './TaskManager/viewtask.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NonManagerFilter } from 'src/app/Projects/user.filter';
 import{FormsModule} from '@angular/forms';
+import{Ng2OrderModule} from 'ng2-order-pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,6 +23,7 @@ import{FormsModule} from '@angular/forms';
     BrowserModule,
     HttpClientModule,
     FormsModule,
+    Ng2OrderModule,
     RouterModule.forRoot(
       [
         {path : 'projects',component: ProjectComponent },

@@ -27,15 +27,15 @@ export class CreateTask{
 export class ViewTask{
     TaskID:number;
     TaskName:string;
-    StartDate:Date;
-    EndDate:Date;
+    StartDate:any;
+    EndDate:any;
     Priority:number;
     Status:string;
     ParentTaskID:number;
     ParentTask:string;
     ProjectID:number;
     ProjectDesc:string
-    constructor(tid:number,tname:string,stdt :Date,enddt:Date,priority:number,status:string,
+    constructor(tid:number,tname:string,stdt :any,enddt:any,priority:number,status:string,
         ptid:number,ptask:string,pid :number,pdesc:string){
             this.TaskID=tid;
             this.TaskName=tname;
