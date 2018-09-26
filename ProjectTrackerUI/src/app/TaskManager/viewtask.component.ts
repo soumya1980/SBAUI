@@ -7,7 +7,14 @@ import { OnInit } from "@angular/core/src/metadata/lifecycle_hooks";
     templateUrl: './viewtask.component.html'
 })
 export class ViewTaskComponent implements OnInit {
-    searchProjectText: string;
+    _searchProjectText: string;
+    get searchProjectText():string{
+        return this._searchProjectText;
+    }
+    set searchProjectText(value:string){
+        this._searchProjectText=value;
+        this.listFilteredProjctTask=this.searchProjectText ? this.PerformFilter():this.listViewTasks;
+    }
     listViewTasks: ViewTask[] = [];
     errorMessage: string;
     listFilteredProjctTask: ViewTask[] = [];
