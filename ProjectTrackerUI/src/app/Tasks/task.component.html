@@ -6,9 +6,14 @@
             <div class="inner-addon right-addon">
               <i class="glyphicon glyphicon-search"></i>
               <input type="text" class="form-control" placeholder="Project" 
-              name="projectId" [(ngModel)]='projectId' />
+              name="projectId" list="projects" [(ngModel)]='projectId' />
             </div>
           </div>
+          <div>
+              <datalist id="projects">
+                <option *ngFor='let project of listProjects' [value]='project.Project_ID'>{{project.ProjectDesc}}</option>
+              </datalist>
+            </div>
         </div>
         <div class="form-group row">
           <label class="col-xs-2 col-sm-2 col-form-label">Task :</label>

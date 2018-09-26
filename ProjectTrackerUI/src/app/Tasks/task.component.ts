@@ -4,6 +4,8 @@ import { TaskService } from "src/app/Tasks/task.service";
 import { UserService } from "src/app/Users/user.service";
 import { User } from "src/app/Users/User";
 import { OnInit } from "@angular/core/src/metadata/lifecycle_hooks";
+import { ProjectService } from "src/app/Projects/project.service";
+import { ViewProject } from "src/app/Projects/project";
 
 @Component({
     templateUrl: './task.component.html'
@@ -21,7 +23,8 @@ export class TaskComponent implements OnInit {
     errorMessage: string;
     listUsers: User[] = [];
     listParentTasks: ParentTask[] = [];
-    constructor(private taskService: TaskService, private userService: UserService) { }
+    listProjects:ViewProject[]=[];
+    constructor(private taskService: TaskService, private userService: UserService,private projectService:ProjectService) { }
     disableToggle() {
         this.showParent = !this.showParent;
         console.log(this.showParent);
@@ -61,7 +64,6 @@ export class TaskComponent implements OnInit {
                 if (users.length > 1) {
                     for (let user of users) {
                         let fuser: User;
-                        //Pull Non Manager Users
                         if (user.IsMgr == false && (user.FirstName != null && user.LastName != null)) {
                             fuser = new User(user.User_ID, user.FirstName, user.LastName, user.Employee_ID);
                             this.listUsers.push(fuser);
@@ -92,8 +94,21 @@ export class TaskComponent implements OnInit {
             error => this.errorMessage = <any>error
         );
     }
+    searchProjects(): void {
+        this.projectService.searchProjects().subscribe(
+            projects => {
+                for (let project of projects) {
+                    let fproject: ViewProject;
+                    fproject = new ViewProject(project.Project_ID, project.ProjectDesc);
+                    this.listProjects.push(fproject);
+                }
+            },
+            error => this.errorMessage = <any>error
+        );
+    }
     ngOnInit(): void {
         this.searchUsers();
         this.searchParentTasks();
+        this.searchProjects();
     }
 }

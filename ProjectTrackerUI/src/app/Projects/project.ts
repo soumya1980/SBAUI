@@ -6,6 +6,14 @@ export class Project{
         this.userProject=usrproject;
     }
 }
+export class ViewProject{
+    Project_ID:number;
+    ProjectDesc:string;
+    constructor(pid:number,pdesc:string){
+        this.Project_ID=pid;
+        this.ProjectDesc=pdesc;
+    }
+}
 export class UserProject{
     ProjectDesc :string;
     StartDt:string;
