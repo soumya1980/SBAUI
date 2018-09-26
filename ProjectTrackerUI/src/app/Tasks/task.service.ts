@@ -32,7 +32,7 @@ export class TaskService{
     viewTasks():Observable<ViewTask[]>{
         return this.http.get<ViewTask[]>(this.viewAllTaskUrl).pipe(
             tap(data=>{
-                console.log('All Tasks :'+JSON.stringify(data));
+                //console.log('All Tasks :'+JSON.stringify(data));
             }),
             catchError(this.handleError)
         );
