@@ -72,7 +72,7 @@ export class ProjectComponent implements OnInit {
                         this.listUsers.push(fuser);
                     }
                 }
-                console.log('Component Built Users' + JSON.stringify(this.listUsers));
+                console.log('Component Built Managers Users' + JSON.stringify(this.listUsers));
             },
             error => this.errorMessage = <any>error
         );

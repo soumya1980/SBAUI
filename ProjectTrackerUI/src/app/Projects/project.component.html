@@ -42,8 +42,13 @@
     <div class="col-sm-3">
       <div class="inner-addon right-addon">
         <i class="glyphicon glyphicon-search"></i>
-        <input type="text" class="form-control" placeholder="Manager" name="employeeId" [(ngModel)]='employeeId' />
+        <input type="text" class="form-control" list="NonMgr" placeholder="Manager" name="employeeId" [(ngModel)]='employeeId' />
       </div>
+    </div>
+    <div>
+      <datalist id="NonMgr">
+        <option *ngFor='let mgr of listUsers' [value]='mgr.User_ID'>{{mgr.FirstName}} {{mgr.LastName}}</option>
+      </datalist>
     </div>
     <div class="col-sm-1">
       <button type="button" class="btn btn-primary btn-md" (click)='createProject()'>Add</button>
