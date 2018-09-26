@@ -11,6 +11,11 @@ import { Project, UserProject, ProjectAndStatus } from "src/app/Projects/project
     }
 )
 export class ProjectComponent implements OnInit {
+    pDescription:string;
+    stDt:string;
+    endDt:string;
+    priority:number;
+    employeeId:number;
     listUsers: User[] = [];
     listProjects: ProjectAndStatus[] = [];
     errorMessage: string;
@@ -19,7 +24,8 @@ export class ProjectComponent implements OnInit {
     }
     createProject(): void {
         console.log('Project Create Button clicked');
-        let projectData = new Project(1006, new UserProject("Hospital Management", "09/20/2018", "09/21/2019", 1));
+        let projectData = new Project(this.employeeId, 
+            new UserProject(this.pDescription, this.stDt, this.endDt, this.priority));
         this.projectService.createProject(projectData).subscribe(
             res => {
                 console.log('Project Created' + JSON.stringify(res));

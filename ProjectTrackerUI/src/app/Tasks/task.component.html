@@ -5,53 +5,59 @@
           <div class="col-sm-4">
             <div class="inner-addon right-addon">
               <i class="glyphicon glyphicon-search"></i>
-              <input type="text" class="form-control" placeholder="Project" />
+              <input type="text" class="form-control" placeholder="Project" 
+              name="projectId" [(ngModel)]='projectId' />
             </div>
           </div>
         </div>
         <div class="form-group row">
           <label class="col-xs-2 col-sm-2 col-form-label">Task :</label>
           <div class="col-sm-4">
-            <input class="form-control" type="text" Placeholder="Task" />
+            <input class="form-control" type="text" Placeholder="Task" 
+            name="taskName" [(ngModel)]='taskName' />
           </div>
         </div>
         <div class="form-group row">
           <label class="col-sm-2 col-form-label"></label>
           <div class="col-sm-3 chk-width">
             <div class="checkbox">
-              <label><input type="checkbox"> Parent Task :</label>
+              <label><input type="checkbox" name="chkParent" (click)='disableToggle()' [(ngModel)]='showParent'/> Parent Task :</label>
             </div>
           </div>
         </div>
         <div class="form-group row">
           <label class="col-sm-2 col-form-label">Priority :</label>
           <div class="col-sm-4">
-            <input type="range" class="form-control-range" id="formControlRange">
+            <input type="range" class="form-control-range" id="formControlRange" 
+            name="priority" [(ngModel)]='priority'/>
           </div>
         </div>
-        <div class="form-group row">
+        <div class="form-group row" *ngIf='!showParent'>
           <label class="col-sm-2 col-form-label">Parent Task :</label>
           <div class="col-sm-4">
             <div class="inner-addon right-addon">
               <i class="glyphicon glyphicon-search"></i>
-              <input type="text" class="form-control" placeholder="Parent Task" />
+              <input type="text" class="form-control" placeholder="Parent Task" 
+              name="pTaskId" [(ngModel)]='pTaskId' />
             </div>
           </div>
         </div>
         <div class="form-group row">
           <label class="col-sm-2 col-form-label">Start Date </label>
-          <div class="col-sm-2">
+          <div class="col-sm-3">
             <div class='input-group date' id='datetimepicker2'>
-              <input type='text' class="form-control" Placeholder="Start Date" />
+              <input type='date' class="form-control" Placeholder="Start Date"
+              name="stDt" [(ngModel)]='stDt' />
               <span class="input-group-addon">
                 <span class="glyphicon glyphicon-calendar"></span>
               </span>
             </div>
           </div>
           <label class="col-sm-1 col-form-label">End Date </label>
-          <div class="col-sm-2">
+          <div class="col-sm-3">
             <div class='input-group date' id='datetimepicker2'>
-              <input type='text' class="form-control" Placeholder="End Date" />
+              <input type='date' class="form-control" Placeholder="End Date"
+              name="endDt" [(ngModel)]='endDt' />
               <span class="input-group-addon">
                 <span class="glyphicon glyphicon-calendar"></span>
               </span>
@@ -63,7 +69,8 @@
           <div class="col-sm-4">
             <div class="inner-addon right-addon">
               <i class="glyphicon glyphicon-search"></i>
-              <input type="text" class="form-control" placeholder="User" />
+              <input type="text" class="form-control" placeholder="User"
+              name="employeeId" [(ngModel)]='employeeId' />
             </div>
           </div>
         </div>

@@ -3,7 +3,7 @@
   <div class="form-group row">
     <label class="col-xs-2 col-sm-2 col-form-label">Project</label>
     <div class="col-sm-4">
-      <input class="form-control" type="text" Placeholder="Project" />
+      <input class="form-control" type="text" Placeholder="Project" name="pDescription" [(ngModel)]='pDescription' />
     </div>
   </div>
   <div class="form-group row">
@@ -16,7 +16,7 @@
     </div>
     <div class="col-sm-3">
       <div class='input-group date' id='datetimepicker2'>
-        <input type='date' class="form-control" Placeholder="Start Date" />
+        <input type='date' class="form-control" Placeholder="Start Date" name="stDt" [(ngModel)]='stDt' />
         <span class="input-group-addon">
           <span class="glyphicon glyphicon-calendar"></span>
         </span>
@@ -24,7 +24,7 @@
     </div>
     <div class="col-sm-3">
       <div class='input-group date' id='datetimepicker2'>
-        <input type='date' class="form-control" Placeholder="End Date" />
+        <input type='date' class="form-control" Placeholder="End Date" name="endDt" [(ngModel)]='endDt' />
         <span class="input-group-addon">
           <span class="glyphicon glyphicon-calendar"></span>
         </span>
@@ -34,7 +34,7 @@
   <div class="form-group row">
     <label class="col-sm-2 col-form-label">Priority :</label>
     <div class="col-sm-4">
-      <input type="range" class="form-control-range" id="formControlRange" min="0" max="30">
+      <input type="range" class="form-control-range" id="formControlRange" min="0" max="30" name="priority" [(ngModel)]='priority'>
     </div>
   </div>
   <div class="form-group row">
@@ -42,7 +42,7 @@
     <div class="col-sm-3">
       <div class="inner-addon right-addon">
         <i class="glyphicon glyphicon-search"></i>
-        <input type="text" class="form-control" placeholder="Manager" />
+        <input type="text" class="form-control" placeholder="Manager" name="employeeId" [(ngModel)]='employeeId' />
       </div>
     </div>
     <div class="col-sm-1">
