@@ -12,6 +12,14 @@ export class Task{
         this.Status=status;
     }
 }
+export class ParentTask{
+    Parent_ID:number;
+    Parent_Task:string;
+    constructor(pid:number,ptask:string){
+        this.Parent_Task=ptask;
+        this.Parent_ID=pid;
+    }
+}
 export class CreateTask{
     projectid:number;
     parentTaskId:number;

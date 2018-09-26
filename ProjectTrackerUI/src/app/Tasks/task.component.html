@@ -39,9 +39,14 @@
             <div class="inner-addon right-addon">
               <i class="glyphicon glyphicon-search"></i>
               <input type="text" class="form-control" placeholder="Parent Task" 
-              name="pTaskId" [(ngModel)]='pTaskId' />
+              name="pTaskId" list="PTask" [(ngModel)]='pTaskId' />
             </div>
           </div>
+          <div>
+              <datalist id="PTask">
+                <option *ngFor='let task of listParentTasks' [value]='task.Parent_ID'>{{task.Parent_Task}}</option>
+              </datalist>
+            </div>
         </div>
         <div class="form-group row">
           <label class="col-sm-2 col-form-label">Start Date </label>
@@ -71,9 +76,14 @@
             <div class="inner-addon right-addon">
               <i class="glyphicon glyphicon-search"></i>
               <input type="text" class="form-control" placeholder="User"
-              name="employeeId" [(ngModel)]='employeeId' />
+              name="employeeId" list="NonMgr" [(ngModel)]='employeeId' />
             </div>
           </div>
+          <div>
+              <datalist id="NonMgr">
+                <option *ngFor='let mgr of listUsers' [value]='mgr.User_ID'>{{mgr.FirstName}} {{mgr.LastName}}</option>
+              </datalist>
+            </div>
         </div>
         <div class="form-group row">
           <label class="col-sm-2 col-form-label"></label>
