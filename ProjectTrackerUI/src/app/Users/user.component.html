@@ -27,4 +27,44 @@
           </div>
         </div>
       </div>
+      <div>
+          <div class="bottom-line-dotted"></div>
+          <div class="clr"></div>
+          <div class="form-group row">
+            <div class="col-sm-4">
+              <div class="inner-addon right-addon">
+                <input type="text" class="form-control" placeholder="Search" 
+                name="searchUserText" [(ngModel)]='searchUserText' />
+              </div>
+              </div>
+              <label class="col-sm-1 col-form-label">Sort:</label>
+                <div class="col-sm-6">
+              <button type="button" class="btn btn-primary" (click)="PerformFilterByKey('FirstName')">FirstName</button>
+              <button type="button" class="btn btn-primary btn-width" (click)="PerformFilterByKey('LastName')">LastName</button>
+              <button type="button" class="btn btn-primary btn-width" (click)="PerformFilterByKey('Employee_ID')">Id</button>
+                </div>
+          </div>
+        <div class="bottom-line-dotted"></div>
+        <div class="clr"></div>
+        <div *ngFor="let user of listFilteredUser | orderBy:key:reverse">
+        <div class="form-group row">
+          <label class="col-form-label col-sm-2">First Name :</label>
+          <label class="col-form-label col-sm-4">{{user.FirstName}}</label>
+        </div>
+        <div class="form-group row">
+          <label class="col-form-label col-sm-2">Last Name :</label>
+          <label class="col-form-label col-sm-2">{{user.LastName}}</label>
+          <div class="col-sm-4">
+            <button type="button" class="btn btn-primary">Edit</button>
+            <button type="button" class="btn btn-primary btn-width">Delete</button>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-form-label col-sm-2">EmployeeID :</label>
+          <label class="col-form-label col-sm-2">{{user.Employee_ID}}</label>
+        </div>
+        <div class="bottom-line-dotted"></div>
+        <div class="clr"></div>
+      </div>
+      </div>
     </form>

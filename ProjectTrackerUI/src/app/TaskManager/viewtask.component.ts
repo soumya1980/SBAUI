@@ -10,9 +10,7 @@ import { OnInit } from "@angular/core/src/metadata/lifecycle_hooks";
 export class ViewTaskComponent implements OnInit {
     key:string='StartDate';
     reverse:boolean=false;
-    sort(key){
-        
-    }
+    
     _searchProjectText: string;
     get searchProjectText():string{
         return this._searchProjectText;
