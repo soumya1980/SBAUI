@@ -83,6 +83,18 @@ pointer-events: none;
     margin-left: -15px;
 }
 
+.nav>li {
+    margin-left: -22px !important;
+}
+.nav-tabs>li>a:hover {
+    border-bottom: #eee;
+    color: #23527c;
+    border-color: #fff;
+}
+.nav>li>a:hover, .nav>li>a:focus{
+    background-color: #fff;
+}
+
 }
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px)
 {
