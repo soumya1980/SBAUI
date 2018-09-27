@@ -2,7 +2,7 @@ import { Component } from "@angular/core";
 import { User } from "src/app/Users/User";
 import { UserService } from "src/app/Users/user.service";
 import { error } from "@angular/compiler/src/util";
-import { CreateUser } from "src/app/Users/createuser";
+import { CreateUser, ViewUser } from "src/app/Users/createuser";
 import { OnInit } from "@angular/core/src/metadata/lifecycle_hooks";
 
 @Component({
@@ -11,7 +11,7 @@ import { OnInit } from "@angular/core/src/metadata/lifecycle_hooks";
 export class UserComponent implements OnInit {
     key:string='FirstName';
     reverse:boolean=false;
-    
+    userId:number;
     errorMessage: string;
     firstName: string;
     lastName: string;
@@ -48,12 +48,21 @@ export class UserComponent implements OnInit {
             error => this.errorMessage = <any>error
         );
     }
+    deleteUser(id:any): void {
+        console.log(id);
+        this.userService.deleteUser(id).subscribe(
+            res => {
+                console.log('User Deleted' + JSON.stringify(res));
+            },
+            error => this.errorMessage = <any>error
+        );
+    }
     viewAllUsers(): void {
         this.userService.getUsers().subscribe(
             users => {
                 for (let user of users) {
-                    let vuser: CreateUser;
-                    vuser = new CreateUser(user.FirstName,user.LastName,user.Employee_ID);
+                    let vuser: ViewUser;
+                    vuser = new ViewUser(user.FirstName,user.LastName,user.Employee_ID,user.User_ID);
                     this.listViewUser.push(vuser);
                 }
             },

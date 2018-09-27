@@ -27,6 +27,7 @@ export class UserService{
     }
     private getusersUrl="http://localhost/ProjectTrackerAPI/api/user/all";
     private createUserUrl="http://localhost/ProjectTrackerAPI/api/user/newuser";
+    private deleteUserUrl="http://localhost/ProjectTrackerAPI/api/user/deleteuser/";
     constructor(private http:HttpClient){}
     getUsers():Observable<User[]>{
         return this.http.get<User[]>(this.getusersUrl).pipe(
@@ -38,6 +39,14 @@ export class UserService{
     }
     createUser(userData:CreateUser):Observable<string>{
         return this.http.post<string>(this.createUserUrl,userData).pipe(
+            tap(res=>{
+            console.log(res);
+        }),
+        catchError(this.handleError)
+    );
+    }
+    deleteUser(userid:string):Observable<string>{
+        return this.http.delete<string>(this.deleteUserUrl+userid).pipe(
             tap(res=>{
             console.log(res);
         }),
