@@ -1,8 +1,8 @@
 <div class="tab-pane" id="settings">
         <div class="clr"></div>
         <div class="form-group row">
-          <label class="col-sm-2 col-form-label">Project :</label>
-          <div class="col-sm-4">
+          <label class="col-xs-12 col-sm-2 col-form-label">Project :</label>
+          <div class="col-xs-12 col-sm-4">
             <div class="inner-addon right-addon">
               <i class="glyphicon glyphicon-search"></i>
               <input type="text" class="form-control" placeholder="Project" 
@@ -11,54 +11,53 @@
           </div>
         </div>
         <div class="form-group row">
-          <label class="col-sm-2 col-form-label">Sort Task By</label>
-          <div class="col-sm-6">
-            <button type="button" class="btn btn-primary" (click)="PerformFilterByDate('StartDate')">Start Date</button>
-            <button type="button" class="btn btn-primary btn-width" (click)="PerformFilterByDate('EndDate')">End Date</button>
-            <button type="button" class="btn btn-primary btn-width" (click)="PerformFilterByDate('Priority')">Priority</button>
-            <button type="button" class="btn btn-primary btn-width" (click)="PerformFilterByDate('StartDate')">Completed</button>
+          <label class="col-xs-12 col-sm-2 col-form-label">Sort Task By</label>
+          <div class="col-xs-12 col-sm-6">
+            <button type="button" class="btn btn-xs  btn-sm btn-md btn-primary" (click)="PerformFilterByDate('StartDate')">Start Date</button>
+            <button type="button" class="btn btn-xs  btn-sm btn-md btn-primary btn-width" (click)="PerformFilterByDate('EndDate')">End Date</button>
+            <button type="button" class="btn btn-xs  btn-sm btn-md btn-primary btn-width" (click)="PerformFilterByDate('Priority')">Priority</button>
+            <button type="button" class="btn btn-xs  btn-sm btn-md btn-primary btn-width" (click)="PerformFilterByDate('StartDate')">Completed</button>
           </div>
         </div>
-        <table id="dtBasicExample" class="table table-striped table-bordered table-sm" 
-        cellspacing="0" width="100%" *ngIf='listFilteredProjctTask && listFilteredProjctTask.length'>
+        <div class="form-group row">
+            <div class="col-xs-12 col-sm-12">
+              <div class="table-responsive">
+
+              
+        <table id="dtBasicExample" class="table" 
+        *ngIf='listFilteredProjctTask && listFilteredProjctTask.length'>
           <thead>
             <tr>
-              <th class="th-sm">Task
+              <th>Task
               </th>
-              <th class="th-sm">Parent
+              <th>Parent
               </th>
-              <th class="th-sm">Priority
+              <th>Priority
               </th>
-              <th class="th-sm">Start
+              <th>Start
               </th>
-              <th class="th-sm">End
+              <th>End
               </th>
-              <th class="th-sm">
+              <th>
               </th>
-              <th class="th-sm">
+              <th>
               </th>
             </tr>
           </thead>
           <tbody *ngFor="let task of listFilteredProjctTask | orderBy:key:reverse">
             <tr>
-              <td class="ProductName">{{task.TaskName}}</td>
+              <td>{{task.TaskName}}</td>
               <td>{{task.ParentTask}}</td>
               <td>{{task.Priority}}</td>
               <td>{{task.StartDate}}</td>
               <td>{{task.EndDate}}</td>
-              <td><button type="button" class="btn btn-primary">Edit</button></td>
-              <td><button type="button" class="btn btn-primary">End Task</button></td>
+              <td><button type="button" class="btn btn-xs btn-sm btn-md btn-primary">Edit</button></td>
+              <td><button type="button" class="btn btn-xs btn-sm btn-md btn-primary">End Task</button></td>
             </tr>
           </tbody>
         </table>
-        <div class="clr"></div>
-        <div class="form-group row">
-          <div class="col-sm-2">
-            <button type="button" class="btn btn-primary btn-lg">Add Product</button>
-          </div>
-          <div class="col-sm-2">
-            <button type="button" class="btn btn-lg btn-primary" disabled>Delete Products</button>
-          </div>
-        </div>
+      </div>
+            </div>
+      </div>
         <div class="clr"></div>
       </div>

@@ -2,19 +2,19 @@
   <div class="tab-pane fade" id="messages">
     <br />
     <div class="form-group row">
-      <label class="col-xs-2 col-sm-2 col-form-label">First Name</label>
+      <label class="col-xs-12  col-sm-2 col-form-label">First Name</label>
       <div class="col-sm-4">
         <input class="form-control" type="text" Placeholder="First Name" name="firstName" [(ngModel)]='firstName' required />
       </div>
     </div>
     <div class="form-group row">
-      <label class="col-xs-2 col-sm-2 col-form-label">Last Name</label>
+      <label class="col-xs-12  col-sm-2 col-form-label">Last Name</label>
       <div class="col-sm-4">
         <input class="form-control" type="text" Placeholder="Last Name" name="lastName" [(ngModel)]='lastName' required />
       </div>
     </div>
     <div class="form-group row">
-      <label class="col-xs-2 col-sm-2 col-form-label">Employee ID</label>
+      <label class="col-xs-12 col-sm-2 col-form-label">Employee ID</label>
       <div class="col-sm-4">
         <input class="form-control" type="text" Placeholder="Employee ID" name="employeeId" [(ngModel)]='employeeId' required />
       </div>
@@ -53,14 +53,15 @@
       <div class="form-group row">
         <label class="col-form-label col-sm-2">Last Name :</label>
         <label class="col-form-label col-sm-2">{{user.LastName}}</label>
-        <div class="col-sm-4">
-          <button type="button" class="btn btn-primary">Edit</button>
-          <button type="button" class="btn btn-primary btn-width" (click)="deleteUser(user.User_ID)">Delete</button>
-        </div>
+        
       </div>
       <div class="form-group row">
         <label class="col-form-label col-sm-2">EmployeeID :</label>
         <label class="col-form-label col-sm-2">{{user.Employee_ID}}</label>
+        <div class="col-sm-4">
+            <button type="button" class="btn btn-primary">Edit</button>
+            <button type="button" class="btn btn-primary btn-width" (click)="deleteUser(user.User_ID)">Delete</button>
+          </div>
       </div>
       <div class="bottom-line-dotted"></div>
       <div class="clr"></div>
