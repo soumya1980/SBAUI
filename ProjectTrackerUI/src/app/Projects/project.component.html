@@ -7,14 +7,14 @@
     </div>
   </div>
   <div class="form-group row">
-    <label class="col-sm-2 col-form-label"></label>
+    <label class="col-xs-12 col-sm-2 col-form-label"></label>
     <div class="col-sm-4 chk-width">
       <div class="checkbox">
         <label>
           <input type="checkbox"> Set Start and End Date</label>
       </div>
     </div>
-    <div class="col-sm-3">
+    <div class="col-sm-2 col-md-3">
       <div class='input-group date' id='datetimepicker2'>
         <input type='date' class="form-control" Placeholder="Start Date" name="stDt" [(ngModel)]='stDt' />
         <span class="input-group-addon">
@@ -22,7 +22,7 @@
         </span>
       </div>
     </div>
-    <div class="col-sm-3">
+    <div class="col-sm-2 col-md-3 clr-div txt-date-margin">
       <div class='input-group date' id='datetimepicker2'>
         <input type='date' class="form-control" Placeholder="End Date" name="endDt" [(ngModel)]='endDt' />
         <span class="input-group-addon">
@@ -50,33 +50,33 @@
         <option *ngFor='let mgr of listUsers' [value]='mgr.User_ID'>{{mgr.FirstName}} {{mgr.LastName}}</option>
       </datalist>
     </div>
-    <div class="col-sm-1">
+    <div class="col-xs-3 col-sm-1 clr-margin-top">
       <button type="button" class="btn btn-primary btn-md" (click)='createProject()'>Add</button>
     </div>
-    <div class="col-sm-1">
+    <div class="col-xs-3 col-sm-1 clr-margin-top">
       <button type="button" class="btn btn-secondary btn-md">Reset</button>
     </div>
   </div>
   <div *ngFor='let project of listProjects'>
     <div class="bottom-line-dotted"></div>
     <div class="clr"></div>
-    <div class="form-group row">
-      <label class="col-form-label col-sm-2">Project :</label>
-      <label class="col-form-label col-sm-4">{{project.ProjectDesc}}</label>
-      <label class="col-form-label col-sm-2">Priority :</label>
-      <label class="col-form-label col-sm-2">{{project.Priority}}</label>
+    <div class="form-group row row-font-size">
+      <label class="col-form-label col-xs-4 col-sm-2">Project:</label>
+      <label class="col-form-label col-xs-6 col-sm-4">{{project.ProjectDesc}}</label>
+      <label class="col-form-label col-xs-4 col-sm-2">Priority:</label>
+      <label class="col-form-label col-xs-6 col-sm-2">{{project.Priority}}</label>
     </div>
-    <div class="form-group row">
-      <label class="col-form-label col-sm-2">No of Tasks :</label>
-      <label class="col-form-label col-sm-2">{{project.TaskNos}}</label>
-      <label class="col-form-label col-sm-2">Completed :</label>
-      <label class="col-form-label col-sm-2">{{project.Status}}</label>
+    <div class="form-group row row-font-size">
+      <label class="col-form-label col-xs-4 col-sm-2">No of Tasks:</label>
+      <label class="col-form-label col-xs-6 col-sm-2">{{project.TaskNos}}</label>
+      <label class="col-form-label col-xs-4 col-sm-2">Completed:</label>
+      <label class="col-form-label col-xs-6 col-sm-2">{{project.Status}}</label>
     </div>
-    <div class="form-group row">
-      <label class="col-form-label col-sm-2">Start Date :</label>
-      <label class="col-form-label col-sm-2">{{project.StartDate}}</label>
-      <label class="col-form-label col-sm-2">End Date :</label>
-      <label class="col-form-label col-sm-2">{{project.EndDate}}</label>
+    <div class="form-group row row-font-size">
+      <label class="col-form-label col-xs-4 col-sm-2">Start Date:</label>
+      <label class="col-form-label col-xs-6 col-sm-2">{{project.StartDate}}</label>
+      <label class="col-form-label col-xs-4 col-sm-2">End Date:</label>
+      <label class="col-form-label col-xs-6 col-sm-2">{{project.EndDate}}</label>
       <div class="col-sm-4">
         <button type="button" class="btn btn-primary">Update</button>
         <button type="button" class="btn btn-primary btn-width">Suspend</button>

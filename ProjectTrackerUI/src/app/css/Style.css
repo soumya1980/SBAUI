@@ -52,3 +52,44 @@ pointer-events: none;
 .bottom-line-dotted{
     border-top:2px dotted #ddd;
     }
+
+/*---------------------------------media quries for all Mobile------------*/
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 560px)
+
+{
+    .chk-width{
+        width: 100%;
+    }
+   .clr-div{
+    clear: both;
+    margin-top: 12px;
+   }
+   .clr-margin-top{
+    margin-top: 12px;
+   }
+   .row-font-size{
+       font-size: 12px;
+       font-weight: normal;
+   }
+
+   .width-content{
+       width: fit-content;
+   }
+   .project-mob-width{
+       margin-left: -21px;
+   }
+   .project-mob-enddate-width{
+    margin-left: -15px;
+}
+
+}
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px)
+{
+    .chk-width {
+        width: 20%;
+    }
+    .txt-date-margin{
+        margin-left: 96px;
+    }
+}
