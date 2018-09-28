@@ -12,6 +12,7 @@ export class UserComponent implements OnInit {
     key:string='FirstName';
     reverse:boolean=false;
     userId:number;
+    isEdit:boolean =false;
     errorMessage: string;
     firstName: string;
     lastName: string;
@@ -47,6 +48,29 @@ export class UserComponent implements OnInit {
             },
             error => this.errorMessage = <any>error
         );
+    }
+    editUser():void{
+        let userData = new ViewUser(this.firstName, this.lastName, this.employeeId,this.userId);
+        this.userService.patchUser(userData.User_ID,userData).subscribe(
+            res => {
+                console.log('User Updated' + JSON.stringify(res));
+            },
+            error => this.errorMessage = <any>error
+        );
+    }
+    resetUser():void{
+        this.employeeId=null;
+        this.firstName="";
+        this.lastName="";
+        this.isEdit=false;
+    }
+    updateUser(user:any): void {
+        console.log(user);
+        this.employeeId=user.Employee_ID;
+        this.firstName=user.FirstName;
+        this.lastName=user.LastName;
+        this.userId=user.User_ID;
+        this.isEdit=true;
     }
     deleteUser(id:any): void {
         console.log(id);

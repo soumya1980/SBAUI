@@ -8,7 +8,7 @@ import { throwError } from "rxjs/internal/observable/throwError";
 import {Headers} from "@angular/http";
 import { RequestOptions } from "@angular/http";
 import { RequestMethod } from "@angular/http";
-import { CreateUser } from "src/app/Users/createuser";
+import { CreateUser, ViewUser } from "src/app/Users/createuser";
 
 @Injectable({
     providedIn:'root'
@@ -27,6 +27,7 @@ export class UserService{
     }
     private getusersUrl="http://localhost/ProjectTrackerAPI/api/user/all";
     private createUserUrl="http://localhost/ProjectTrackerAPI/api/user/newuser";
+    private patchUserUrl="http://localhost/ProjectTrackerAPI/api/user/patchuser/";
     private deleteUserUrl="http://localhost/ProjectTrackerAPI/api/user/deleteuser/";
     constructor(private http:HttpClient){}
     getUsers():Observable<User[]>{
@@ -39,6 +40,14 @@ export class UserService{
     }
     createUser(userData:CreateUser):Observable<string>{
         return this.http.post<string>(this.createUserUrl,userData).pipe(
+            tap(res=>{
+            console.log(res);
+        }),
+        catchError(this.handleError)
+    );
+    }
+    patchUser(id:any,userData:ViewUser):Observable<string>{
+        return this.http.put<string>(this.patchUserUrl+id,userData).pipe(
             tap(res=>{
             console.log(res);
         }),

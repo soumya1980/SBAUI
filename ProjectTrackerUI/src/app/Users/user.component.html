@@ -22,8 +22,8 @@
     <div class="form-group row">
       <label class="col-sm-2 col-form-label"></label>
       <div class="col-sm-4">
-        <button type="submit" class="btn btn-primary" (click)='createUser()'>Add</button>
-        <button type="button" class="btn btn-primary btn-width">Reset</button>
+        <button type="submit" class="btn btn-primary"  (click)='!isEdit?createUser():editUser()'>{{isEdit?'Update':'Add'}}</button>
+        <button type="button" class="btn btn-primary btn-width" (click)='resetUser()'>Reset</button>
       </div>
     </div>
   </div>
@@ -59,7 +59,7 @@
         <label class="col-form-label col-sm-2">EmployeeID :</label>
         <label class="col-form-label col-sm-2">{{user.Employee_ID}}</label>
         <div class="col-sm-4">
-            <button type="button" class="btn btn-primary">Edit</button>
+            <button type="button" class="btn btn-primary" (click)="updateUser(user)">Edit</button>
             <button type="button" class="btn btn-primary btn-width" (click)="deleteUser(user.User_ID)">Delete</button>
           </div>
       </div>
