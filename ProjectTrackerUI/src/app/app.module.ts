@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NonManagerFilter } from 'src/app/Projects/user.filter';
 import{FormsModule} from '@angular/forms';
 import{Ng2OrderModule} from 'ng2-order-pipe';
+import { DemoComponent } from './demo/demo.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +18,8 @@ import{Ng2OrderModule} from 'ng2-order-pipe';
     TaskComponent,
     UserComponent,
     ViewTaskComponent,
-    NonManagerFilter
+    NonManagerFilter,
+    DemoComponent
   ],
   imports: [
     BrowserModule,
