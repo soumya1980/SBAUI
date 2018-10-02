@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectTrackerAPI", "Projec
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectTrackerApiTest", "ProjectTrackerApiTest\ProjectTrackerApiTest.csproj", "{7ACA6131-E8D8-4175-B50C-FF39473B70EA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PerformanceTest", "PerformanceTest\PerformanceTest.csproj", "{745C683B-C817-480A-B19A-17DF5190AF2C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{7ACA6131-E8D8-4175-B50C-FF39473B70EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7ACA6131-E8D8-4175-B50C-FF39473B70EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7ACA6131-E8D8-4175-B50C-FF39473B70EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{745C683B-C817-480A-B19A-17DF5190AF2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{745C683B-C817-480A-B19A-17DF5190AF2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{745C683B-C817-480A-B19A-17DF5190AF2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{745C683B-C817-480A-B19A-17DF5190AF2C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
